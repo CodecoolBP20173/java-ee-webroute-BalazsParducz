@@ -21,7 +21,8 @@ public class WebRouteHomeWork {
         try {
             for (Method m : methods) {
                 if (m.isAnnotationPresent(WebRoute.class)) {
-                    server.createContext(m.getAnnotation(WebRoute.class).value(), new MyRouteMethods());
+                    String path = m.getAnnotation(WebRoute.class).value();
+                    server.createContext(path, new MyRouteMethods());
                 }
             }
         } catch (Throwable ex) {
