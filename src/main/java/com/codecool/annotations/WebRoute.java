@@ -10,7 +10,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME) // are to be retained by the VM so they can be read reflectively at run-time.
 @Target(ElementType.METHOD)         // can be used to annotate only method declarations.
 public @interface WebRoute {
-    String value();
+    String value() default "";
 }
-
-
